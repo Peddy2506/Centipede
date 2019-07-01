@@ -1,7 +1,7 @@
-﻿// FILENAME.cs
-// Created: 7/1/19
-// Owner: Jacob
-
+﻿
+// PlayerController.cs
+// 6/28
+// Casper
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
