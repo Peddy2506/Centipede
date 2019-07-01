@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class PlayerContoller : MonoBehaviour
 {
-    public float speed = .05f;
+    public float speed = 1f;
 
  
     void Start()
@@ -38,9 +38,5 @@ public class PlayerContoller : MonoBehaviour
             rb.velocity += Vector2.down * speed;
         }
 
-        
-    
-        
- 
     }
 }
