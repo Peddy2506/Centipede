@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    // Start is called before the first frame update
+    float = 0.25f
     void Start()
     {
         
