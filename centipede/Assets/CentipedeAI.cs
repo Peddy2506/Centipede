@@ -15,9 +15,10 @@ public class CentipedeAI : MonoBehaviour
     float secondsPerFrame;
     public float timeUntilChange;
     public Vector2Int position;
-    List<Vector2> lastPositions = new List<Vector2>();
+    public List<Vector2Int> lastPositions = new List<Vector2Int>();
     public GameObject[] bodyparts;
     public float speed;
+    bool hasCollided = false;
 
     void UpdateSecondsPerFrame()
     {
@@ -30,26 +31,18 @@ public class CentipedeAI : MonoBehaviour
     {
         if (facingRight)
         {
-            position.x++;
+            Move(position + Vector2Int.right);
         }
         else
         {
-            position.x--;
+            Move(position + Vector2Int.left);
         }
-    }
-
-
-    void HeadMove()
-    {
-        lastPositions[0] = transform.position;
-        transform.position += new Vector3(speed, 0);
     }
 
 
     void MoveSegment(int currentSegment)
     {
-        lastPositions[currentSegment + 1] = bodyparts[currentSegment].transform.position;
-        bodyparts[currentSegment].transform.position = lastPositions[currentSegment];
+        bodyparts[currentSegment].transform.position = new Vector3(lastPositions[currentSegment].x, lastPositions[currentSegment].y, 0) * speed;
     }
 
     // Start is called before the first frame update
@@ -57,7 +50,7 @@ public class CentipedeAI : MonoBehaviour
     {
         for(int i = 0; i < bodyparts.Length + 1; i++)
         {
-            lastPositions.Add(Vector2.zero);
+            lastPositions.Add(Vector2Int.zero);
         }
         UpdateSecondsPerFrame();
         timeUntilChange = secondsPerFrame;
@@ -66,6 +59,7 @@ public class CentipedeAI : MonoBehaviour
     void Move(Vector2Int newPosition)
     {
         lastPositions.Add(position);
+        lastPositions.RemoveAt(0);
         position = newPosition;
     }
 
@@ -78,20 +72,47 @@ public class CentipedeAI : MonoBehaviour
             timeUntilChange = secondsPerFrame;
             Move();
         }
-        transform.position = new Vector3(position.x * speed, position.y * speed, 0);
+        transform.position = new Vector3(position.x, position.y, 0) * speed;
 
         for(int i = 0; i < bodyparts.Length; i++)
         {
             MoveSegment(i);
         }
-        //transform.position = new Vector3(position.x * scale, position.y * scale, 0);
+        if (facingRight)
+            transform.rotation = Quaternion.Euler(0, 0, 180);
+        else
+            transform.rotation = Quaternion.Euler(0, 0, 0);
 
+        if (hasCollided)
+            hasCollided = true;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
-        facingRight = !facingRight;
-        position.y--;
-        Move();
+        if (collision.tag == "Mushroom")
+        {
+            Debug.Log("Mushroom");
+            facingRight = !facingRight;
+            position.y--;
+            if (!hasCollided)
+            {
+                hasCollided = false;
+                Move();
+            }
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Border")
+        {
+            Debug.Log("Border");
+            facingRight = !facingRight;
+            position.y--;
+            if (!hasCollided)
+            {
+                hasCollided = false;
+                Move();
+            }
+        }
     }
 }
