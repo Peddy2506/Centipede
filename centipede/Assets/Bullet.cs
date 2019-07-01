@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    float speed = 1;
-
+    float lifetime = 5;
+    
     void Update()
     {
-        transform.position += Vector3.up * speed;
+        lifetime -= Time.deltaTime;
+        if (lifetime < 0)
+            Destroy(gameObject);
+        transform.position += Vector3.up;
     }
 }
