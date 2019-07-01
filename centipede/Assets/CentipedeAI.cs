@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿
+// CentipedeAI
+// June 28, 2019
+// @author Peter Lee
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
