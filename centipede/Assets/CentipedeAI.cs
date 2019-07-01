@@ -10,10 +10,34 @@ using UnityEngine;
 
 public class CentipedeAI : MonoBehaviour
 {
+    public bool facingRight = false;
+    public float framesPerSecond;
+    float secondsPerFrame;
+    public float timeUntilChange;
     public Vector2Int position;
     List<Vector2> lastPositions = new List<Vector2>();
     public GameObject[] bodyparts;
     public float speed;
+
+    void UpdateSecondsPerFrame()
+    {
+        if (framesPerSecond <= 0)
+            framesPerSecond = 0.0001f;
+        secondsPerFrame = 1f / framesPerSecond;
+    }
+
+    void Move()
+    {
+        if (facingRight)
+        {
+            position.x++;
+        }
+        else
+        {
+            position.x--;
+        }
+    }
+
 
     void HeadMove()
     {
@@ -27,6 +51,7 @@ public class CentipedeAI : MonoBehaviour
         lastPositions[currentSegment + 1] = bodyparts[currentSegment].transform.position;
         bodyparts[currentSegment].transform.position = lastPositions[currentSegment];
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +59,8 @@ public class CentipedeAI : MonoBehaviour
         {
             lastPositions.Add(Vector2.zero);
         }
+        UpdateSecondsPerFrame();
+        timeUntilChange = secondsPerFrame;
     }
 
     void Move(Vector2Int newPosition)
@@ -45,16 +72,26 @@ public class CentipedeAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeUntilChange -= Time.deltaTime;
+        if (timeUntilChange < 0)
+        {
+            timeUntilChange = secondsPerFrame;
+            Move();
+        }
+        transform.position = new Vector3(position.x * speed, position.y * speed, 0);
 
-        HeadMove();
         for(int i = 0; i < bodyparts.Length; i++)
         {
             MoveSegment(i);
         }
-        
-
-
         //transform.position = new Vector3(position.x * scale, position.y * scale, 0);
 
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        facingRight = !facingRight;
+        position.y--;
+        Move();
     }
 }

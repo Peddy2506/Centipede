@@ -15,9 +15,7 @@ public class MyAnimation : MonoBehaviour
         if (framesPerSecond <= 0)
             framesPerSecond = 0.0001f;
         secondsPerFrame = 1f / framesPerSecond;
-       
     }
-
 
     void Start()
     {
