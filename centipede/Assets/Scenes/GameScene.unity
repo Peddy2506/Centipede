@@ -813,12 +813,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
+  - component: {fileID: 289888056}
+  - component: {fileID: 289888055}
+  - component: {fileID: 289888058}
+  - component: {fileID: 289888057}
+  - component: {fileID: 289888060}
+  - component: {fileID: 289888059}
+  m_Layer: 8
+  m_Name: 'Player Ship '
+  m_TagString: Untagged
+=======
   - component: {fileID: 216902703}
   - component: {fileID: 216902702}
   - component: {fileID: 216902704}
   m_Layer: 0
   m_Name: Planet 12
   m_TagString: Mushroom
+>>>>>>> master
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,13 +872,21 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
+  m_Sprite: {fileID: 3093961486472141330, guid: 19db55db77cef9a4797c5bf60ba59d93,
+=======
   m_Sprite: {fileID: -6339053642455338090, guid: 7207c223b0cad8f4da15a42174105630,
+>>>>>>> master
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< HEAD
+  m_Size: {x: 0.13, y: 0.17}
+=======
   m_Size: {x: 0.28125, y: 0.21875}
+>>>>>>> master
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -903,14 +923,23 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+    oldSize: {x: 0.13, y: 0.17}
+    newSize: {x: 0.13, y: 0.17}
+=======
     oldSize: {x: 0.28125, y: 0.21875}
     newSize: {x: 0.28125, y: 0.21875}
+>>>>>>> master
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD
+  m_Size: {x: 0.13, y: 0.17}
+=======
   m_Size: {x: 0.28125, y: 0.21875}
+>>>>>>> master
   m_EdgeRadius: 0
 --- !u!1 &225467373
 GameObject:
@@ -1579,11 +1608,20 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
+  - component: {fileID: 764448297}
+  - component: {fileID: 764448296}
+  - component: {fileID: 764448295}
+  m_Layer: 9
+  m_Name: Border 5
+  m_TagString: Border
+=======
   - component: {fileID: 411768256}
   - component: {fileID: 411768255}
   m_Layer: 0
   m_Name: Star (38)
   m_TagString: Untagged
+>>>>>>> master
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2109,12 +2147,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
+  - component: {fileID: 971729499}
+  - component: {fileID: 971729498}
+  - component: {fileID: 971729497}
+  - component: {fileID: 971729496}
+  m_Layer: 9
+  m_Name: Border 2
+  m_TagString: Border
+=======
   - component: {fileID: 604217657}
   - component: {fileID: 604217656}
   - component: {fileID: 604217655}
   m_Layer: 0
   m_Name: Planet 20
   m_TagString: Mushroom
+>>>>>>> master
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2396,7 +2444,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+--- !u!1 &1132669542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1132669546}
+  - component: {fileID: 1132669545}
+  - component: {fileID: 1132669544}
+  - component: {fileID: 1132669543}
+  m_Layer: 9
+  m_Name: Border 4
+  m_TagString: Border
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1132669543
+=======
 --- !u!61 &734816406
+>>>>>>> master
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4582,7 +4653,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5816,8 +5887,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501928703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
+  m_LocalPosition: {x: 0, y: 0.99, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+=======
   m_LocalPosition: {x: -2.24, y: -3.46, z: 0}
   m_LocalScale: {x: 3.1514, y: 3.1514, z: 3.1514}
+>>>>>>> master
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 72
@@ -8765,6 +8841,7 @@ GameObject:
   - component: {fileID: 2119862420}
   - component: {fileID: 2119862422}
   - component: {fileID: 2119862423}
+  - component: {fileID: 2119862424}
   m_Layer: 0
   m_Name: Enemy Ship (Spider)
   m_TagString: Untagged
@@ -8809,12 +8886,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 59aa7f9ba946b5249a37e88c32609fed, type: 3}
+  m_Sprite: {fileID: 4480140969885537872, guid: 59aa7f9ba946b5249a37e88c32609fed,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.15, y: 0.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8828,7 +8906,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119862419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
+  m_LocalPosition: {x: -10.28, y: -0.05, z: 0}
+=======
   m_LocalPosition: {x: -12.65, y: 0.16, z: 0}
+>>>>>>> master
   m_LocalScale: {x: 2.9042, y: 2.9042, z: 2.9042}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8864,7 +8946,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2119862419}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3934512b341691e4e99098b689a57b73, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -8872,21 +8954,35 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.15, y: 0.15}
+    newSize: {x: 0.15, y: 0.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.15, y: 0.15}
   m_EdgeRadius: 0
+<<<<<<< HEAD
+--- !u!114 &2119862424
+MonoBehaviour:
+=======
 --- !u!1 &2135163789
 GameObject:
+>>>>>>> master
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 2119862419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 792b352318428254fb2622153af2512c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+=======
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2135163791}
@@ -8960,3 +9056,4 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 80
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> master
