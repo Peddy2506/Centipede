@@ -9,15 +9,22 @@ public class Bullet : MonoBehaviour
 {
     float lifetime = 5;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Insect Head")
+        if (other.tag == "Insect Head")
         {
-            CentipedeAI cai = collision.gameObject.GetComponent<CentipedeAI>();
+            CentipedeAI cai = other.GetComponent<CentipedeAI>();
+            Destroy(cai.bodyparts[cai.bodyparts.Count - 1]);
             cai.bodyparts.RemoveAt(cai.bodyparts.Count - 1);
-            cai.position = cai.lastPositions[0];
-            cai.lastPositions.RemoveAt(0);
+            cai.position = cai.lastPositions[cai.lastPositions.Count - 1];
+            cai.lastPositions.RemoveAt(cai.lastPositions.Count - 1);
         }
+
+/*        if (collision.gameObject.tag == "Insect Body")
+        {
+           TODO: Insert code that seperates Insect Body 
+        }
+*/
     }
 
     void Update()

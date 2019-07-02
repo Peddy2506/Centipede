@@ -48,13 +48,13 @@ public class CentipedeAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < bodyparts.Count + 1; i++)
-        {
-            lastPositions.Add(Vector2Int.zero);
-        }
         UpdateSecondsPerFrame();
         timeUntilChange = secondsPerFrame;
         position = new Vector2Int((int)(transform.position.x / speed), (int)(transform.position.y / speed));
+        for(int i = 0; i < bodyparts.Count + 1; i++)
+        {
+            lastPositions.Add(position);
+        }
     }
 
     void Move(Vector2Int newPosition)
