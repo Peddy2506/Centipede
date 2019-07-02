@@ -16,7 +16,7 @@ public class CentipedeAI : MonoBehaviour
     public float timeUntilChange;
     public Vector2Int position;
     public List<Vector2Int> lastPositions = new List<Vector2Int>();
-    public GameObject[] bodyparts;
+    public List<GameObject> bodyparts;
     public float speed;
     bool hasCollided = false;
 
@@ -48,12 +48,13 @@ public class CentipedeAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < bodyparts.Length + 1; i++)
+        for(int i = 0; i < bodyparts.Count + 1; i++)
         {
             lastPositions.Add(Vector2Int.zero);
         }
         UpdateSecondsPerFrame();
         timeUntilChange = secondsPerFrame;
+        position = new Vector2Int((int)(transform.position.x / speed), (int)(transform.position.y / speed));
     }
 
     void Move(Vector2Int newPosition)
@@ -74,7 +75,7 @@ public class CentipedeAI : MonoBehaviour
         }
         transform.position = new Vector3(position.x, position.y, 0) * speed;
 
-        for(int i = 0; i < bodyparts.Length; i++)
+        for(int i = 0; i < bodyparts.Count; i++)
         {
             MoveSegment(i);
         }

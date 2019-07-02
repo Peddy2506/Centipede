@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6996333827424254645}
   - component: {fileID: 672366329814271569}
-  - component: {fileID: 4289073500648459808}
+  - component: {fileID: 5518862511877725522}
   m_Layer: 0
   m_Name: Bullet (1)
   m_TagString: Untagged
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4289073500648459808
+--- !u!114 &5518862511877725522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
