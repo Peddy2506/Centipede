@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Mushroom
   - Border
+  - Insect Head
+  - Insect Body
   layers:
   - Default
   - TransparentFX

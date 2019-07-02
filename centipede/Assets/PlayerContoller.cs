@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerContoller : MonoBehaviour
 {
@@ -13,7 +14,12 @@ public class PlayerContoller : MonoBehaviour
  
     void Start()
     {
-        
+
+    }
+
+    public void Reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
@@ -38,5 +44,13 @@ public class PlayerContoller : MonoBehaviour
             rb.velocity += Vector2.down * speed;
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Insect Head")
+        {
+            Reload();
+        }
     }
 }
