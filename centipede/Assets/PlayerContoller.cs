@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class PlayerContoller : MonoBehaviour
 {
     public float speed = 1f;
-
+    public string nextScene = "";
  
     void Start()
     {
@@ -51,7 +51,7 @@ public class PlayerContoller : MonoBehaviour
         if (collision.gameObject.tag == "Insect Head"
             || collision.gameObject.tag == "Spider")
         {
-            Reload();
+            SceneManager.LoadScene("gameover");
         }
     }
 }

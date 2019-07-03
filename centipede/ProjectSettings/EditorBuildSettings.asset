@@ -6,12 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/digipen logo.unity
+    guid: fa0ff7c3e118f4d49ba25909e2550bee
+  - enabled: 1
+    path: Assets/Scenes/logo.unity
+    guid: 5fefa98b23593ab4b8ee36734fb5a48d
+  - enabled: 1
     path: Assets/Scenes/Start and Quit.unity
     guid: e17f5415d0a31824799ad7778237a76f
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/control rules.unity
+    guid: 280319a3a4558b84f8a730111ca39b32
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: b7667f3d50af98242867f0a5acf18aa8
+  - enabled: 1
+    path: Assets/Scenes/high scoreleaderboard.unity
+    guid: 7a19757ffefd2ac41bf2ec4788dbe5b4
+  - enabled: 1
+    path: Assets/Scenes/credits.unity
+    guid: 35687b105138a7f4b9604e650eb0c156
   m_configObjects: {}
