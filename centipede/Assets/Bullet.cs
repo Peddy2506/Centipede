@@ -18,12 +18,20 @@ public class Bullet : MonoBehaviour
         if (other.tag == "Insect Head")
         {
             CentipedeAI cai = other.GetComponent<CentipedeAI>();
-            Destroy(cai.bodyparts[cai.bodyparts.Count - 1]);
-            cai.bodyparts.RemoveAt(cai.bodyparts.Count - 1);
-            cai.position = cai.lastPositions[cai.lastPositions.Count - 1];
-            cai.lastPositions.RemoveAt(cai.lastPositions.Count - 1);
-            cai.UpdateBodyParts();
-            Score.score += 100;
+            if (cai.bodyparts.Count == 0)
+            {
+                Destroy(other.gameObject);
+                Score.score += 1000;
+            }
+            else
+            {
+                Destroy(cai.bodyparts[cai.bodyparts.Count - 1]);
+                cai.bodyparts.RemoveAt(cai.bodyparts.Count - 1);
+                cai.position = cai.lastPositions[cai.lastPositions.Count - 1];
+                cai.lastPositions.RemoveAt(cai.lastPositions.Count - 1);
+                cai.UpdateBodyParts();
+                Score.score += 100;
+            }
         }
         else if (other.tag == "Insect Body")
         {
