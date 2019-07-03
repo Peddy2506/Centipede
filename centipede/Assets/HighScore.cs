@@ -7,18 +7,20 @@ using UnityEngine.UI;
 public class HighScore : MonoBehaviour
 {
     public string filename = "highscores.json";
+    public int maxScores = 4;
     public string fullpath
     {
         get
         {
             if (filename.EndsWith(".json"))
-                return Application.persistentDataPath + filename;
+                return Application.persistentDataPath + "\\" + filename;
             else
-                return Application.persistentDataPath + filename + ".json";
+                return Application.persistentDataPath + "\\" + filename + ".json";
         }
     }
     Text text;
 
+    [System.Serializable]
     public class Score
     {
         public string name;
@@ -29,11 +31,12 @@ public class HighScore : MonoBehaviour
             score = s;
         }
     }
+    [System.Serializable]
     public class Data
     {
         public List<Score> scores;
     }
-    Data data;
+    public Data data = new Data();
 
     void Start()
     {
@@ -43,6 +46,8 @@ public class HighScore : MonoBehaviour
         {
             Debug.LogError("HighScore must be attached to an object with Text!");
         }
+        AddScore("", global::Score.score);
+        Save();
     }
 
     void Update()
@@ -50,8 +55,11 @@ public class HighScore : MonoBehaviour
         if (text)
         {
             text.text = "";
-            foreach (Score s in data.scores)
+            for (int i = 0; i < data.scores.Count && i < maxScores; ++i)
+            {
+                Score s = data.scores[i];
                 text.text += s.name + "\t" + s.score + "\n";
+            }
         }
     }
 
@@ -88,13 +96,20 @@ public class HighScore : MonoBehaviour
 
     public void Load()
     {
-        StreamReader sr = new StreamReader(fullpath);
-        if (sr == null)
+        try
+        {
+            StreamReader sr = new StreamReader(fullpath);
+            if (sr == null)
+            {
+                Debug.LogError("Couldn't load path: " + fullpath);
+                return;
+            }
+            data = JsonUtility.FromJson<Data>(sr.ReadToEnd());
+            sr.Close();
+        }
+        catch
         {
             Debug.LogError("Couldn't load path: " + fullpath);
-            return;
         }
-        data = JsonUtility.FromJson<Data>(sr.ReadToEnd());
-        sr.Close();
     }
 }
