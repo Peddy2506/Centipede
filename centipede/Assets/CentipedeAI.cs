@@ -42,7 +42,28 @@ public class CentipedeAI : MonoBehaviour
 
     void MoveSegment(int currentSegment)
     {
-        bodyparts[currentSegment].transform.position = new Vector3(lastPositions[currentSegment].x, lastPositions[currentSegment].y, 0) * speed;
+        if (currentSegment >= bodyparts.Count)
+            return;
+        if (bodyparts[currentSegment] == null)
+        {
+            bodyparts.RemoveAt(currentSegment);
+            UpdateBodyParts();
+        }
+        else if (currentSegment >= lastPositions.Count)
+        {
+            if (lastPositions.Count == 0)
+                bodyparts[currentSegment].transform.position = new Vector3(position.x, position.y, 0) * speed;
+            else
+                bodyparts[currentSegment].transform.position = new Vector3(lastPositions[lastPositions.Count - 1].x, lastPositions[lastPositions.Count - 1].y, 0) * speed;
+        }
+        else
+            bodyparts[currentSegment].transform.position = new Vector3(lastPositions[(lastPositions.Count - 1) - currentSegment].x, lastPositions[(lastPositions.Count - 1) - currentSegment].y, 0) * speed;
+    }
+
+    public void UpdateBodyParts()
+    {
+        for(int i = 0; i < bodyparts.Count; i++)
+            bodyparts[i].GetComponent<InsectBody>().index = i;
     }
 
     // Start is called before the first frame update
@@ -54,13 +75,15 @@ public class CentipedeAI : MonoBehaviour
         for(int i = 0; i < bodyparts.Count + 1; i++)
         {
             lastPositions.Add(position);
+            UpdateBodyParts();
         }
     }
 
     void Move(Vector2Int newPosition)
     {
         lastPositions.Add(position);
-        lastPositions.RemoveAt(0);
+        while (lastPositions.Count > bodyparts.Count)
+            lastPositions.RemoveAt(0);
         position = newPosition;
     }
 
@@ -75,7 +98,7 @@ public class CentipedeAI : MonoBehaviour
         }
         transform.position = new Vector3(position.x, position.y, 0) * speed;
 
-        for(int i = 0; i < bodyparts.Count; i++)
+        for(int i = bodyparts.Count - 1; i >= 0; i--)
         {
             MoveSegment(i);
         }

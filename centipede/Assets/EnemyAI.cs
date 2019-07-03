@@ -11,6 +11,16 @@ public class EnemyAI : MonoBehaviour
     Rigidbody2D rb;
     public float speed = 2;
 
+/*    void OnTriggerEnter2D(Collider2D other)
+    {
+       if (other.gameObject.tag == "PlayerController")
+        {
+            PlayerContoller player = other.GetComponent<PlayerContoller>();
+            Destroy(player.PlayerController);
+        }
+    }
+*/
+
 
     void Start()
     {
