@@ -43,7 +43,10 @@ public class PlayerContoller : MonoBehaviour
         {
             rb.velocity += Vector2.down * speed;
         }
-
+        if (FindObjectsOfType<CentipedeAI>().Length == 0 && FindObjectsOfType<InsectBody>().Length == 0)
+        {
+            SceneManager.LoadScene("win");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

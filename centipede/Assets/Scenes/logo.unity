@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 2
-  nextScene: GameScene
+  nextScene: Start and Quit
 --- !u!1 &1956164201
 GameObject:
   m_ObjectHideFlags: 0
