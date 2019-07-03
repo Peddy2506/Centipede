@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
             cai.position = cai.lastPositions[cai.lastPositions.Count - 1];
             cai.lastPositions.RemoveAt(cai.lastPositions.Count - 1);
             cai.UpdateBodyParts();
+            Score.score += 100;
         }
         else if (other.tag == "Insect Body")
         {
@@ -39,7 +40,7 @@ public class Bullet : MonoBehaviour
                 cai2 = newHead.GetComponent<CentipedeAI>();
                 cai2.bodyparts = new List<GameObject>();
                 newHead.transform.parent = other.transform.parent;
-                newHead.transform.position = oldHead.transform.position;
+                newHead.transform.position = other.transform.position;
 
                 cai2.position = cai.lastPositions[index];
 
@@ -60,14 +61,17 @@ public class Bullet : MonoBehaviour
             cai.UpdateBodyParts();
             if (cai2 != null)
                 cai2.UpdateBodyParts();
+            Score.score += 500;
         }
         else if (other.tag == "Spider")
         {
             Destroy(other.gameObject);
+            Score.score += 1000;
         }
         else if (other.tag == "Mushroom")
         {
             Destroy(other.gameObject);
+            Score.score += 10;
         }
 
         hit = true;
