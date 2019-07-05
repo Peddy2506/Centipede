@@ -10,6 +10,7 @@ TagManager:
   - Insect Body
   - PlayerController
   - Spider
+  - Bottom Border
   layers:
   - Default
   - TransparentFX

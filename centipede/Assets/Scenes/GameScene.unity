@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingRight: 1
-  framesPerSecond: 10
+  framesPerSecond: 35
   timeUntilChange: 0
   position: {x: 0, y: 0}
   lastPositions: []
@@ -10103,7 +10103,7 @@ GameObject:
   - component: {fileID: 1906369419}
   m_Layer: 0
   m_Name: Border 1
-  m_TagString: Border
+  m_TagString: Bottom Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10187,7 +10187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906369418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -5.21, z: 0}
+  m_LocalPosition: {x: -0.04, y: -5.08, z: 0}
   m_LocalScale: {x: 39.025196, y: 0.35, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11064,8 +11064,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 29
+    m_Font: {fileID: 12800000, guid: d5027e6e79d889f498a217edb5a4dc04, type: 3}
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10

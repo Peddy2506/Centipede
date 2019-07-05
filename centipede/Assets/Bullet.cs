@@ -46,6 +46,7 @@ public class Bullet : MonoBehaviour
                 Debug.Log("Making new head");
                 newHead = Instantiate(oldHead);
                 cai2 = newHead.GetComponent<CentipedeAI>();
+                cai2.facingRight = !cai2.facingRight;
                 cai2.bodyparts = new List<GameObject>();
                 newHead.transform.parent = other.transform.parent;
                 newHead.transform.position = other.transform.position;

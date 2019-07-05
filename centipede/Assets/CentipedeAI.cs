@@ -7,6 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CentipedeAI : MonoBehaviour
 {
@@ -137,6 +138,12 @@ public class CentipedeAI : MonoBehaviour
                 hasCollided = false;
                 Move();
             }
+        }
+
+        if (collision.gameObject.tag == "Bottom Border")
+        {
+            Debug.Log("Bottom");
+            SceneManager.LoadScene("gameover");
         }
     }
 }
