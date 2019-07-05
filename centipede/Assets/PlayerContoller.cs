@@ -45,7 +45,7 @@ public class PlayerContoller : MonoBehaviour
         }
         if (FindObjectsOfType<CentipedeAI>().Length == 0 && FindObjectsOfType<InsectBody>().Length == 0)
         {
-            SceneManager.LoadScene("win");
+            SceneManager.LoadScene("Win");
         }
     }
 
